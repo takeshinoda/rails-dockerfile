@@ -1,5 +1,7 @@
 FROM ubuntu:14.10
 
+MAINTAINER takeshinoda
+
 # timezone
 RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
@@ -14,7 +16,7 @@ ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:en  
 ENV LC_ALL ja_JP.UTF-8 
 
-# ruby
+# ruby build
 RUN apt-get install -y --force-yes autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 
 # rbenv-build
@@ -49,5 +51,6 @@ RUN rbenv rehash
 RUN echo 'install: --no-document' > ~/.gemrc
 RUN echo 'update: --no-document' >> ~/.gemrc
 RUN bash -l -c 'gem install bundler'
-RUN bash -l -c 'gem install rails ">~4.2.0"'
+RUN bash -l -c 'gem install pg'
+RUN bash -l -c 'gem install rails -v "~>4.2.0"'
 
