@@ -14,7 +14,7 @@ RUN apt-get install -y --force-yes language-pack-ja
 RUN locale-gen ja_JP.utf8  
 RUN update-locale LANG=ja_JP.utf8
 ENV LANG ja_JP.utf8  
-ENV LANGUAGE ja_JP:en  
+ENV LANGUAGE ja_JP.utf8
 ENV LC_ALL ja_JP.utf8 
 
 # ruby build
