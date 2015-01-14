@@ -8,14 +8,15 @@ RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
+RUN apt-get upgrade
 
 # locale
+RUN apt-get install -y --force-yes locales
 RUN apt-get install -y --force-yes language-pack-ja
-RUN locale-gen ja_JP.utf8  
-RUN update-locale LANG=ja_JP.utf8
-ENV LANG ja_JP.utf8  
-ENV LANGUAGE ja_JP.utf8
-ENV LC_ALL ja_JP.utf8 
+RUN locale-gen
+RUN update-locale LC_ALL=ja_JP.UTF-8
+
+ENV LC_ALL ja_JP.UTF-8 
 
 # ruby build
 RUN apt-get install -y --force-yes autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
