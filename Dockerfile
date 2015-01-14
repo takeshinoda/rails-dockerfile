@@ -11,10 +11,11 @@ RUN apt-get update
 
 # locale
 RUN apt-get install -y --force-yes language-pack-ja
-RUN locale-gen ja_JP.UTF-8  
-ENV LANG ja_JP.UTF-8  
+RUN locale-gen ja_JP.utf8  
+RUN update-locale LANG=ja_JP.utf8
+ENV LANG ja_JP.utf8  
 ENV LANGUAGE ja_JP:en  
-ENV LC_ALL ja_JP.UTF-8 
+ENV LC_ALL ja_JP.utf8 
 
 # ruby build
 RUN apt-get install -y --force-yes autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
