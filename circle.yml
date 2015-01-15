@@ -8,10 +8,14 @@ dependencies:
     - docker build -t takeshinoda/rails42_pg .:
         timeout: 600
 
+test:
+  override:
+    - docker run takeshinoda/rails42_pg:4.2.0 /bin/bash -lc "rails --version"
+
 deployment:
   hub:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push takeshinoda/rails42_pg
+      - docker push takeshinoda/rails42_pg:4.2.0
 
