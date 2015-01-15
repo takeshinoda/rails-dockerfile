@@ -6,7 +6,7 @@ dependencies:
   override:
     - docker info
     - docker build -t takeshinoda/rails42_pg .:
-        timeout: 300
+        timeout: 600
 
 deployment:
   hub:
