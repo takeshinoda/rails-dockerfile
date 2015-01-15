@@ -8,7 +8,7 @@ RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get -y --force-yes upgrade
 
 # locale
 RUN apt-get install -y --force-yes locales
