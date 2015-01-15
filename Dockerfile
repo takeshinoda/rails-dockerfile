@@ -1,6 +1,6 @@
 FROM ubuntu:14.10
 
-MAINTAINER takeshinoda
+MAINTAINER takeshinoda<takeshinoda@gmail.com>
 
 # timezone
 RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
@@ -53,5 +53,5 @@ RUN echo 'install: --no-document' > ~/.gemrc
 RUN echo 'update: --no-document' >> ~/.gemrc
 RUN bash -l -c 'gem install bundler'
 RUN bash -l -c 'gem install pg'
-RUN bash -l -c 'gem install rails -v "~>4.2.0"'
+RUN bash -l -c 'gem install rails -v "4.2.0"'
 

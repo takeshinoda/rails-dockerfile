@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t takeshinoda/rails42_pg .:
+    - docker build -t takeshinoda/rails42_pg:4.2.0 .:
         timeout: 600
 
 test:
