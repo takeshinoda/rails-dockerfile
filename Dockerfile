@@ -12,11 +12,10 @@ RUN apt-get -y --force-yes upgrade
 
 # locale
 RUN apt-get install -y --force-yes locales
-RUN apt-get install -y --force-yes language-pack-ja
-RUN locale-gen
-RUN update-locale LC_ALL=ja_JP.UTF-8
 
-ENV LC_ALL ja_JP.UTF-8 
+ENV LANGUAGE C
+ENV LC_ALL C
+ENV LANG C
 
 # ruby build
 RUN apt-get install -y --force-yes autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
